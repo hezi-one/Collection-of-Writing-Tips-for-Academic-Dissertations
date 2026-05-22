@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学术论文写作规范速查｜GB/T 7713.2—2022</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --accent: #16a34a;
+      --warning: #f59e0b;
+      --border: #e5e7eb;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #eef5ff 0%, var(--bg) 260px);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 20px 28px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 64px;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+    }
+
+    .card h2, .card h3 {
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    .number {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pill-list li {
+      background: #f3f4f6;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 14px;
+    }
+
+    section {
+      margin-top: 32px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-title span {
+      width: 10px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      background: white;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eff6ff;
+      color: #1e40af;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .checklist label {
+      display: block;
+      padding: 12px 14px;
+      margin: 10px 0;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .tip {
+      border-left: 5px solid var(--accent);
+      background: #ecfdf5;
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin: 14px 0;
+    }
+
+    .warn {
+      border-left-color: var(--warning);
+      background: #fffbeb;
+    }
+
+    .example {
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 14px;
+      padding: 18px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 46px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      header { padding-top: 36px; }
+      th, td { display: block; width: 100%; }
+      th { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="tag">学生版速查指南</span>
+    <h1>一篇合格学术论文<br />应该怎么写？</h1>
+    <p class="subtitle">根据 GB/T 7713.2—2022《学术论文编写规则》整理，把国家标准转化为更容易理解和执行的写作清单。</p>
+  </header>
+
+  <main>
+    <section class="grid">
+      <article class="card">
+        <div class="number">1</div>
+        <h3>论文是什么？</h3>
+        <p>学术论文是记录研究过程、方法和结果的书面材料，用于学术交流、讨论或发表。</p>
+      </article>
+      <article class="card">
+        <div class="number">2</div>
+        <h3>核心目标</h3>
+        <p>让别人能看懂你的研究问题、研究方法、数据结果和结论，并能方便检索、引用和传播。</p>
+      </article>
+      <article class="card">
+        <div class="number">3</div>
+        <h3>三大组成</h3>
+        <ul class="pill-list">
+          <li>前置部分</li>
+          <li>正文部分</li>
+          <li>附录部分</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-title"><span></span><h2>论文结构：先搭骨架，再写内容</h2></div>
+      <table>
+        <thead>
+          <tr>
+            <th>部分</th>
+            <th>必须包含</th>
+            <th>写作提醒</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>前置部分</strong></td>
+            <td>题名、作者信息、摘要、关键词</td>
+            <td>这是读者和数据库最先看到的信息，要简明、准确、便于检索。</td>
+          </tr>
+          <tr>
+            <td><strong>正文部分</strong></td>
+            <td>引言、主体、参考文献；有结论则结论必备</td>
+            <td>正文应科学合理、客观真实、层次清晰、逻辑严密。</td>
+          </tr>
+          <tr>
+            <td><strong>附录部分</strong></td>
+            <td>有附录时必须规范编号</td>
+            <td>不宜塞进正文、但又有价值的原始数据、推导、程序等可放入附录。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>题名怎么写？</h3>
+        <p>题名要能准确反映论文核心内容，简明清楚，一般不宜超过 <strong>25 字</strong>。避免夸张词、空泛词。</p>
+        <div class="tip">好题名 = 研究对象 + 研究问题 / 方法 + 关键变量。</div>
+      </article>
+      <article class="card">
+        <h3>摘要怎么写？</h3>
+        <p>摘要应独立成文，不加评论。通常包括：目的、方法、结果、结论。</p>
+        <ul>
+          <li>报道性摘要：约 400 字</li>
+          <li>报道/指示性摘要：约 300 字</li>
+          <li>指示性摘要：约 150 字</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>关键词怎么选？</h3>
+        <p>关键词用于检索，宜选 <strong>3—8 个</strong>。不要选“方法”“理论”“分析”这类过泛词。</p>
+        <div class="tip warn">优先从题名、摘要、正文中提取最能代表主题的词或词组。</div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-title"><span></span><h2>正文写作：每一部分负责什么？</h2></div>
+      <table>
+        <thead>
+          <tr>
+            <th>模块</th>
+            <th>主要任务</th>
+            <th>学生常见问题</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>引言</strong></td>
+            <td>说明研究背景、目的、意义、已有研究和创新点。</td>
+            <td>不要写成大而空的背景介绍，要紧扣论文主题。</td>
+          </tr>
+          <tr>
+            <td><strong>主体</strong></td>
+            <td>展开理论、方法、材料、实验、结果与讨论。</td>
+            <td>方法要写清楚，让同领域读者能够理解甚至复现。</td>
+          </tr>
+          <tr>
+            <td><strong>结论</strong></td>
+            <td>提炼研究结果和论点。</td>
+            <td>不能简单复制摘要，也不能只是各章小结拼接。</td>
+          </tr>
+          <tr>
+            <td><strong>致谢</strong></td>
+            <td>感谢对论文形成有贡献的组织或个人。</td>
+            <td>语言要客观、真实、诚恳。</td>
+          </tr>
+          <tr>
+            <td><strong>参考文献</strong></td>
+            <td>列出与研究主题密切相关的文献。</td>
+            <td>格式应统一，符合 GB/T 7714。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <div class="section-title"><span></span><h2>格式规范：最容易扣分的细节</h2></div>
+      <div class="grid">
+        <div>
+          <h3>章节编号</h3>
+          <p>正文一般不宜超过 4 级。编号可用阿拉伯数字，如：</p>
+          <div class="example">1 研究方法<br />1.1 数据来源<br />1.1.1 样本筛选</div>
+        </div>
+        <div>
+          <h3>图表编号</h3>
+          <p>图、表、公式分别连续编号。只有一张图也写“图1”。</p>
+          <div class="example">图1 研究流程图<br />表1 样本基本情况<br />式(1)</div>
+        </div>
+        <div>
+          <h3>量和单位</h3>
+          <p>使用法定计量单位，单位符号与数字之间留空。</p>
+          <div class="example">正确：20 ℃、1.84 g/mL<br />避免：20℃、1.84g/mL</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card checklist">
+      <div class="section-title"><span></span><h2>提交前自查清单</h2></div>
+      <label><input type="checkbox" />题名是否简明、准确，且一般不超过 25 字？</label>
+      <label><input type="checkbox" />作者信息、单位、通信方式是否完整？</label>
+      <label><input type="checkbox" />摘要是否包含目的、方法、结果、结论？</label>
+      <label><input type="checkbox" />关键词是否为 3—8 个，且具有检索意义？</label>
+      <label><input type="checkbox" />引言是否交代研究背景、目的、意义和创新点？</label>
+      <label><input type="checkbox" />主体是否清楚说明方法、过程、数据和结果？</label>
+      <label><input type="checkbox" />结论是否是提炼概括，而不是重复摘要？</label>
+      <label><input type="checkbox" />图、表、公式是否都有编号和标题？</label>
+      <label><input type="checkbox" />参考文献格式是否统一，并符合 GB/T 7714？</label>
+      <label><input type="checkbox" />术语、数字、单位、标点是否规范？</label>
+    </section>
+
+    <section class="card">
+      <div class="section-title"><span></span><h2>一份简单论文模板</h2></div>
+      <div class="example">
+题名：××××研究<br />
+作者：张三，李四<br />
+单位：××大学 ××学院<br /><br />
+摘要：目的……方法……结果……结论……<br />
+关键词：关键词1；关键词2；关键词3<br /><br />
+0 引言<br />
+1 材料与方法 / 研究方法<br />
+2 结果<br />
+3 讨论<br />
+4 结论<br />
+致谢<br />
+参考文献<br />
+附录 A
+      </div>
+    </section>
+
+    <footer>
+      本网页为学习辅助版，依据 GB/T 7713.2—2022《学术论文编写规则》整理；正式投稿请以学校、期刊或会议的具体要求为准。
+    </footer>
+  </main>
+</body>
+</html>

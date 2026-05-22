@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>学位论文编写规则｜学生速览版</title>
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --paper:#ffffff;
+      --ink:#172033;
+      --muted:#657085;
+      --line:#e7e9f1;
+      --brand:#4f46e5;
+      --brand-2:#06b6d4;
+      --good:#16a34a;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --soft:#eef2ff;
+      --radius:20px;
+      --shadow:0 18px 50px rgba(23,32,51,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+      color:var(--ink);
+      background:linear-gradient(135deg,#f8fafc 0%,#eef2ff 42%,#ecfeff 100%);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:auto;padding:28px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:radial-gradient(circle at 15% 10%,rgba(6,182,212,.22),transparent 30%),
+                 radial-gradient(circle at 85% 0%,rgba(79,70,229,.24),transparent 32%),
+                 linear-gradient(135deg,#fff,#f8fbff);
+      box-shadow:var(--shadow);
+      padding:46px 42px;
+      margin-bottom:24px;
+      border:1px solid rgba(255,255,255,.65);
+    }
+    .hero h1{font-size:clamp(30px,4.2vw,58px);line-height:1.05;margin:12px 0 14px;letter-spacing:-.04em}
+    .hero p{max-width:820px;color:var(--muted);font-size:18px;margin:0 0 20px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;background:#eef2ff;border-radius:999px;color:#3730a3;font-weight:700;font-size:14px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .btn{border:0;border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 22px rgba(79,70,229,.16)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white}
+    .btn.ghost{background:white;color:var(--brand);border:1px solid #dfe3ff}
+    .note{font-size:13px;color:var(--muted);margin-top:16px}
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+    aside{position:sticky;top:18px;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 28px rgba(23,32,51,.06);padding:18px}
+    aside h2{font-size:16px;margin:0 0 12px}
+    nav a{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:12px;color:#4b5563;font-weight:650;font-size:14px}
+    nav a:hover,nav a.active{background:var(--soft);color:var(--brand)}
+    .search{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:8px 0 14px;font-size:14px;background:#fff}
+    main{display:grid;gap:22px}
+    section{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 14px 34px rgba(23,32,51,.06);padding:26px;scroll-margin-top:24px}
+    section h2{font-size:28px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+    section .sub{color:var(--muted);margin:0 0 20px}
+    .grid{display:grid;gap:16px}
+    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(23,32,51,.04)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:800;margin-bottom:9px;background:#f1f5f9;color:#475569}
+    .tag.need{background:#dcfce7;color:#166534}.tag.choice{background:#fffbeb;color:#92400e}.tag.rule{background:#eef2ff;color:#3730a3}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:8px}
+    .step{position:relative;padding:18px;border-radius:18px;background:linear-gradient(180deg,#fff,#f8fafc);border:1px solid var(--line);min-height:128px}
+    .step strong{display:block;font-size:18px;margin-bottom:6px}.step small{color:var(--muted)}
+    .num{width:30px;height:30px;border-radius:50%;display:inline-grid;place-items:center;background:var(--brand);color:white;font-weight:900;margin-bottom:10px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:#fff}
+    table{width:100%;border-collapse:collapse;min-width:680px}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+    th{background:#f8fafc;font-weight:900;color:#334155} tr:last-child td{border-bottom:0}
+    .checklist{display:grid;gap:10px}
+    .checkitem{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+    .checkitem input{width:18px;height:18px;margin-top:4px;accent-color:var(--brand)}
+    .checkitem span{font-weight:680}.checkitem em{display:block;font-style:normal;color:var(--muted);font-size:13px;font-weight:400}
+    .meter{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:12px 0 6px}.meter>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--good));transition:.25s}
+    details{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px 16px} details+details{margin-top:10px} summary{cursor:pointer;font-weight:900}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px}.pill{padding:7px 10px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:13px;font-weight:700}
+    .warnbox{border-left:5px solid var(--warn);background:#fffbeb;padding:14px 16px;border-radius:14px;color:#713f12}
+    .okbox{border-left:5px solid var(--good);background:#f0fdf4;padding:14px 16px;border-radius:14px;color:#14532d}
+    .footer{margin:20px 0 6px;color:var(--muted);font-size:13px;text-align:center}
+    mark{background:#fef3c7;border-radius:5px;padding:0 2px}
+    @media (max-width:900px){.layout{grid-template-columns:1fr}aside{position:relative;top:auto}.flow{grid-template-columns:1fr 1fr}.grid.two,.grid.three{grid-template-columns:1fr}.hero{padding:34px 24px}.wrap{padding:18px}}
+    @media (max-width:560px){.flow{grid-template-columns:1fr}section{padding:20px}.hero-actions .btn{width:100%;justify-content:center}}
+    @media print{body{background:#fff}.wrap{padding:0}.hero,aside,section{box-shadow:none}.btn,.search,aside{display:none}.layout{display:block}section{break-inside:avoid;margin-bottom:14px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="kicker">GB/T 7713.1—2006 学位论文编写规则 · 学生速览版</span>
+      <h1>把学位论文格式规则<br>变成一张可操作清单</h1>
+      <p>本网页把标准中的“范围、术语、组成部分、正文写法、参考文献、附录和排版格式”整理成易读版，适合论文开题后、定稿前快速自查。</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#checklist">开始自查</a>
+        <a class="btn ghost" href="#structure">看论文结构</a>
+        <button class="btn ghost" onclick="window.print()">打印/保存 PDF</button>
+      </div>
+      <p class="note">提示：学校或学院模板优先。本页用于理解 GB/T 7713.1—2006 的通用要求，不替代学校最终格式规定。</p>
+    </header>
+
+    <div class="layout">
+      <aside>
+        <h2>快速导航</h2>
+        <input id="search" class="search" placeholder="搜索：摘要、图、表、页码……" />
+        <nav id="nav">
+          <a href="#overview">01 这份规则管什么</a>
+          <a href="#general">02 通用要求</a>
+          <a href="#structure">03 论文结构</a>
+          <a href="#front">04 前置部分</a>
+          <a href="#body">05 主体部分</a>
+          <a href="#refappendix">06 参考文献与附录</a>
+          <a href="#format">07 排版速查</a>
+          <a href="#dataset">08 数据集</a>
+          <a href="#checklist">09 定稿清单</a>
+          <a href="#mistakes">10 常见错误</a>
+        </nav>
+      </aside>
+
+      <main id="content">
+        <section id="overview" data-keywords="范围 适用 对象 载体 学位论文">
+          <h2>01｜这份规则管什么？</h2>
+          <p class="sub">一句话：它规定学位论文应该怎么“写、排、标、存”，让论文便于撰写、收集、存储、检索和利用。</p>
+          <div class="grid three">
+            <div class="card"><span class="tag rule">适用</span><h3>学位论文</h3><p>适用于用于申请学位的论文，包括学士、硕士、博士等论文。</p></div>
+            <div class="card"><span class="tag rule">载体</span><h3>纸质、电子、网络版</h3><p>同一篇论文不同载体形式，内容和格式应保持一致。</p></div>
+            <div class="card"><span class="tag rule">目标</span><h3>统一表达</h3><p>统一题名、摘要、目录、正文、参考文献、附录等核心组成。</p></div>
+          </div>
+        </section>
+
+        <section id="general" data-keywords="一般要求 简体字 单位 术语 符号 A4 插图 照片">
+          <h2>02｜通用要求：先把底线守住</h2>
+          <p class="sub">写作前先记住这 6 条，后面排版会轻松很多。</p>
+          <div class="grid two">
+            <div class="card"><h3>内容完整、准确</h3><p>论文内容应完整、准确，正文表述要客观、真实、合乎逻辑。</p></div>
+            <div class="card"><h3>文字与语言</h3><p>一般使用国家正式公布的简化汉字；论文可用中文或英文为主，特殊情况需要详细中英文摘要。</p></div>
+            <div class="card"><h3>计量单位</h3><p>采用国家法定计量单位，不要在同一篇论文中混用不规范单位。</p></div>
+            <div class="card"><h3>术语、符号统一</h3><p>术语、符号、代号全文一致；专业缩略词首次出现时应说明。</p></div>
+            <div class="card"><h3>图和照片清晰</h3><p>插图、照片应完整清晰，照片主要显示部分轮廓要鲜明。</p></div>
+            <div class="card"><h3>A4 纸</h3><p>论文使用 A4 标准纸，尺寸为 210 mm × 297 mm。</p></div>
+          </div>
+        </section>
+
+        <section id="structure" data-keywords="组成部分 前置 主体 参考文献 附录 结尾 结构图">
+          <h2>03｜一篇论文的 5 个组成部分</h2>
+          <p class="sub">可以把论文想成一条从“封面信息”到“正文研究”再到“补充材料”的路线。</p>
+          <div class="flow">
+            <div class="step"><span class="num">1</span><strong>前置部分</strong><small>封面、题名页、摘要、目录、图表清单等。</small></div>
+            <div class="step"><span class="num">2</span><strong>主体部分</strong><small>引言、章/节、图表公式、结论等。</small></div>
+            <div class="step"><span class="num">3</span><strong>参考文献</strong><small>只列正文中引用过的文献，格式遵照 GB/T 7714。</small></div>
+            <div class="step"><span class="num">4</span><strong>附录</strong><small>放不宜进正文但有价值的补充材料。</small></div>
+            <div class="step"><span class="num">5</span><strong>结尾部分</strong><small>索引、作者简历、原创性声明、数据集等。</small></div>
+          </div>
+        </section>
+
+        <section id="front" data-keywords="前置部分 封面 封二 题名页 摘要 关键词 目录 目次 致谢 勘误">
+          <h2>04｜前置部分怎么放？</h2>
+          <p class="sub">前置部分是读者打开论文后最先看到的“身份信息 + 导航”。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>是否必需</th><th>学生理解版说明</th></tr></thead>
+              <tbody>
+                <tr><td>封面</td><td><span class="tag choice">可有</span></td><td>放论文题名、作者等主要信息，学校通常有模板。</td></tr>
+                <tr><td>封二</td><td><span class="tag choice">可选</span></td><td>可放使用声明、版权声明、作者和导师签名等。</td></tr>
+                <tr><td>题名页</td><td><span class="tag need">应有</span></td><td>包含完整书目信息：分类号、学校代码、密级、学位授予单位、题名、作者、导师、学位类别等。</td></tr>
+                <tr><td>英文题名页</td><td><span class="tag choice">必要时</span></td><td>作为题名页延伸，必要时单独成页。</td></tr>
+                <tr><td>勘误页</td><td><span class="tag choice">如有</span></td><td>若有勘误，放在题名页之后，顶部写题名、副题名、作者名。</td></tr>
+                <tr><td>致谢</td><td><span class="tag choice">常见</span></td><td>感谢资助、协助研究、提供建议或授权资料的人和机构。</td></tr>
+                <tr><td>摘要页</td><td><span class="tag need">应有</span></td><td>中文摘要 300—600 字左右；外文摘要实词 300 个左右；下方列 3—8 个关键词，并标注英文关键词。</td></tr>
+                <tr><td>序言/前言</td><td><span class="tag choice">如有</span></td><td>介绍研究缘起、背景、目的、意义、资助协作等；也可放到正文引言中。</td></tr>
+                <tr><td>目次页</td><td><span class="tag need">应有</span></td><td>放章节标题及起始页码，排在序言/前言之后，另起页。</td></tr>
+                <tr><td>图表清单、符号缩略语表</td><td><span class="tag choice">如有</span></td><td>图表很多、符号很多时单独列清单，方便读者查找。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <details style="margin-top:16px"><summary>摘要最容易出错，应该怎么写？</summary>
+            <p>摘要要“独立、自含”：读者不看全文也能获得必要信息。一般说明研究目的、方法、结果、结论，重点放在结果和结论。尽量避免图、表、化学结构式、非公知符号和术语。</p>
+          </details>
+        </section>
+
+        <section id="body" data-keywords="主体部分 引言 正文 图 表 公式 引文 注释 结论">
+          <h2>05｜主体部分：正文里每种元素怎么写？</h2>
+          <p class="sub">主体部分通常从引言或绪论开始，以结论或讨论结束。每章建议另起页。</p>
+          <div class="grid two">
+            <div class="card"><span class="tag rule">引言/绪论</span><h3>交代研究目的、流程和方法</h3><p>研究领域的历史回顾、文献回顾、理论分析等内容，可以独立成章。</p></div>
+            <div class="card"><span class="tag rule">正文</span><h3>客观、真实、层次清楚</h3><p>不同学科不强行统一结构，但必须实事求是、逻辑清楚、简练可读。</p></div>
+            <div class="card"><span class="tag rule">图</span><h3>图题在图下方</h3><p>图应具有“自明性”，编号由“图 + 阿拉伯数字”组成，图多时可分章编号。</p></div>
+            <div class="card"><span class="tag rule">表</span><h3>表题在表上方</h3><p>表应具有“自明性”，建议采用国际通行的三线表；转页续排时重复表头。</p></div>
+            <div class="card"><span class="tag rule">公式</span><h3>另行起排，编号右对齐</h3><p>两个以上公式用阿拉伯数字编号并加括号；公式较多时可分章编号。</p></div>
+            <div class="card"><span class="tag rule">结论</span><h3>不是各段小结的重复</h3><p>应包含核心观点、研究局限，以及未来工作的意见或建议；要准确、完整、明确、精练。</p></div>
+          </div>
+          <div class="warnbox" style="margin-top:16px">引文标注可以采用“顺序编码制”或“著者-出版年制”，但全文必须统一，并遵照 GB/T 7714 的著录规则。</div>
+        </section>
+
+        <section id="refappendix" data-keywords="参考文献 附录 书目 引用 著者出版年 顺序编码">
+          <h2>06｜参考文献与附录：哪些该放，哪些别乱放</h2>
+          <div class="grid two">
+            <div class="card">
+              <h3>参考文献表</h3>
+              <p>放在正文后并另起页。正文中引用过的文献都要列入；未引用但阅读过或有补充信息的文献，不应混入参考文献表，可集中放入标题为“书目”的附录。</p>
+            </div>
+            <div class="card">
+              <h3>附录</h3>
+              <p>附录不是必需项，用来放“进正文会打断阅读，但又有价值”的材料，例如详细数据、推导过程、结构图、统计表、程序输出、珍贵资料等。</p>
+            </div>
+          </div>
+          <details style="margin-top:16px"><summary>什么材料适合放附录？</summary>
+            <p>更详尽的研究方法、过大的复制材料、不便放入正文的珍贵资料、同行需要但普通读者不必读的资料、正文未引用但有补充价值的文献、重要原始数据和数学推导等。</p>
+          </details>
+        </section>
+
+        <section id="format" data-keywords="编排格式 章节 页码 页边距 A4 版面 附录 目录 参考文献">
+          <h2>07｜排版速查</h2>
+          <p class="sub">这里适合定稿前逐项核对。</p>
+          <div class="grid two">
+            <div class="card"><h3>章节编号</h3><p>主体部分可按章、节划分，编号建议采用类似 1、2.1、2.8.1 的层级方式；编号顶格排，编号与标题间空 1 个字距。</p></div>
+            <div class="card"><h3>页码</h3><p>前置部分使用罗马数字单独连续编号；正文和后置部分使用阿拉伯数字连续编号。封面除外。</p></div>
+            <div class="card"><h3>页边距</h3><p>为便于装订、复印和批注，上方和左侧各留 25 mm 以上；下方和右侧各留 20 mm 以上。</p></div>
+            <div class="card"><h3>附录排版</h3><p>附录编号、附录标题各占一行，放在附录条文上方居中位置；每个附录通常另起页。</p></div>
+          </div>
+          <div class="okbox" style="margin-top:16px">记忆口诀：正文“图题在下、表题在上”；前置部分用罗马页码，正文开始用阿拉伯页码。</div>
+        </section>
+
+        <section id="dataset" data-keywords="学位论文数据集 必选项 关键词 密级 中图分类号 UDC 作者 导师">
+          <h2>08｜学位论文数据集：提交系统常用信息</h2>
+          <p class="sub">标准列出 33 项数据，其中带 * 的为必选项，共 22 项。下面按学生填写视角归类。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>类别</th><th>常见字段</th><th>注意</th></tr></thead>
+              <tbody>
+                <tr><td>论文主题</td><td>关键词*、密级*、中图分类号*、UDC、论文资助</td><td>关键词应与摘要一致；密级按学校/单位要求填写。</td></tr>
+                <tr><td>学位信息</td><td>学位授予单位名称*、单位代码*、学位类别*、学位级别*</td><td>机构名称用规范全称。</td></tr>
+                <tr><td>论文信息</td><td>论文题名*、并列题名、论文语种*、论文总页数*</td><td>中英文题名在全文不同位置要保持一致。</td></tr>
+                <tr><td>作者与培养</td><td>作者姓名*、学号*、培养单位名称*、培养单位代码*、地址、邮编</td><td>培养单位通常是学院、研究院或培养机构。</td></tr>
+                <tr><td>学科与时间</td><td>学科专业*、研究方向*、学制*、学位授予年*、论文提交日期*</td><td>专业名称建议按学校或学科目录规范填写。</td></tr>
+                <tr><td>导师与答辩</td><td>导师姓名*、职称*、评阅人、答辩委员会主席*、答辩委员会委员</td><td>答辩后补齐，避免遗漏。</td></tr>
+                <tr><td>电子版</td><td>提交格式、发布者、发布地、权限声明</td><td>常见格式包括 application/msword、application/pdf。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="checklist" data-keywords="自查 清单 定稿 检查">
+          <h2>09｜定稿前自查清单</h2>
+          <p class="sub">勾选会自动保存在当前浏览器。</p>
+          <div class="meter"><i id="bar"></i></div>
+          <p id="progress" class="sub">已完成 0/0 项</p>
+          <div class="checklist" id="checklistBox">
+            <label class="checkitem"><input type="checkbox"><span>题名不超过 25 字左右，且中英文题名一致<em>题名应简明、准确反映论文核心内容。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>题名页信息完整<em>分类号、学校代码、密级、学位授予单位、作者、导师、学位类别等已核对。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>中文摘要 300—600 字左右<em>包含目的、方法、结果、结论，重点写结果与结论。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>关键词 3—8 个，并有英文关键词<em>关键词要能体现论文特色，且在论文中有明确出处。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>目录、图表清单、符号表按需设置<em>图表很多时建议列清单；缩略语多时建议列注释表。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>图、表、公式编号统一<em>图题在下，表题在上，公式编号加括号并右对齐。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>引用标注全篇统一<em>顺序编码制和著者-出版年制二选一，不混用。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>参考文献只列正文中引用过的文献<em>未引用但有补充价值的材料可放“书目”附录。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>前置页码与正文页码区分<em>前置部分罗马数字，正文和后置部分阿拉伯数字。</em></span></label>
+            <label class="checkitem"><input type="checkbox"><span>页边距符合基础要求<em>上/左 ≥25 mm，下/右 ≥20 mm。</em></span></label>
+          </div>
+        </section>
+
+        <section id="mistakes" data-keywords="错误 雷区 摘要 关键词 图表 公式 参考文献 缩略词 单位">
+          <h2>10｜最常见的 8 个格式雷区</h2>
+          <div class="pill-row">
+            <span class="pill">摘要写成引言</span>
+            <span class="pill">关键词太泛</span>
+            <span class="pill">图题放错位置</span>
+            <span class="pill">表格不用三线表</span>
+            <span class="pill">引用格式混用</span>
+            <span class="pill">缩略词首次出现未解释</span>
+            <span class="pill">参考文献有文中未引用项</span>
+            <span class="pill">页码前后不分</span>
+          </div>
+          <div class="warnbox" style="margin-top:18px">最后检查顺序建议：先检查学校模板 → 再检查本页清单 → 最后逐页看图表、公式、参考文献和页码。</div>
+        </section>
+      </main>
+    </div>
+
+    <p class="footer">整理依据：GB/T 7713.1—2006《学位论文编写规则》。本页为学习辅助版。</p>
+  </div>
+
+  <script>
+    const checks = Array.from(document.querySelectorAll('#checklistBox input[type="checkbox"]'));
+    const bar = document.getElementById('bar');
+    const progress = document.getElementById('progress');
+    const key = 'gbt7713_student_checklist_v1';
+    const saved = JSON.parse(localStorage.getItem(key) || '[]');
+    checks.forEach((c,i)=>{ c.checked = !!saved[i]; c.addEventListener('change', updateProgress); });
+    function updateProgress(){
+      const done = checks.filter(c=>c.checked).length;
+      const total = checks.length;
+      bar.style.width = total ? (done/total*100) + '%' : '0%';
+      progress.textContent = `已完成 ${done}/${total} 项`;
+      localStorage.setItem(key, JSON.stringify(checks.map(c=>c.checked)));
+    }
+    updateProgress();
+
+    const input = document.getElementById('search');
+    const sections = Array.from(document.querySelectorAll('main section'));
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      sections.forEach(sec => {
+        const text = (sec.innerText + ' ' + (sec.dataset.keywords || '')).toLowerCase();
+        sec.style.display = !q || text.includes(q) ? '' : 'none';
+      });
+    });
+
+    const navLinks = Array.from(document.querySelectorAll('nav a'));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px', threshold:0});
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>
