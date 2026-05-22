@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>学术论文写作与规范资源中心</title>
+
   <style>
     :root{
       --bg:#f6f7fb;
@@ -18,147 +19,715 @@
       --shadow:0 22px 60px rgba(24,32,51,.11);
       --radius:26px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+      "Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+
       color:var(--ink);
+
       background:
         radial-gradient(circle at 10% 8%, rgba(155,18,49,.12), transparent 28%),
         radial-gradient(circle at 88% 4%, rgba(37,99,235,.14), transparent 30%),
         linear-gradient(180deg,#fff 0%,var(--bg) 42%,#fff 100%);
+
       line-height:1.7;
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1160px;margin:auto;padding:28px 22px 70px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:34px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900}
-    .mark{width:38px;height:38px;border-radius:14px;background:#182033;color:#fff;display:grid;place-items:center;box-shadow:0 12px 26px rgba(24,32,51,.18)}
-    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .nav a{font-size:14px;color:var(--muted);padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.72)}
-    .nav a:hover{color:var(--blue);border-color:#bfdbfe;background:#eff6ff}
-    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;margin:34px 0 28px}
-    .hero-card{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.72);border-radius:34px;padding:42px;box-shadow:var(--shadow);overflow:hidden;position:relative}
-    .hero-card:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-70px;top:-80px;background:rgba(37,99,235,.10)}
-    .kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:14px;font-weight:800}
-    .kicker:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--indigo)}
-    h1{font-size:clamp(36px,6vw,68px);line-height:1.04;letter-spacing:-.045em;margin:18px 0 16px}
-    .lead{font-size:18px;color:var(--muted);max-width:760px;margin:0}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 18px;font-weight:900;border:1px solid transparent;transition:.2s ease}
-    .btn.primary{background:var(--ink);color:white;box-shadow:0 14px 30px rgba(24,32,51,.22)}
-    .btn.primary:hover{transform:translateY(-2px)}
-    .btn.ghost{background:#fff;border-color:var(--line);color:var(--ink)}
-    .btn.ghost:hover{border-color:#bfdbfe;color:var(--blue)}
-    .summary{display:grid;gap:14px}
-    .mini{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 10px 28px rgba(24,32,51,.06)}
-    .mini b{display:block;font-size:18px;margin-bottom:4px}.mini span{color:var(--muted)}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:52px 0 18px}
-    h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0;letter-spacing:-.03em}.sub{color:var(--muted);margin:0;max-width:560px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .site-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 14px 34px rgba(24,32,51,.07);overflow:hidden;display:flex;flex-direction:column;min-height:330px;transition:.2s ease}
-    .site-card:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(24,32,51,.12)}
-    .site-card:before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:var(--accent)}
-    .badge{width:46px;height:46px;border-radius:17px;display:grid;place-items:center;background:color-mix(in srgb, var(--accent) 14%, white);color:var(--accent);font-weight:950;margin-bottom:18px}
-    .site-card h3{font-size:22px;line-height:1.25;margin:0 0 10px}.site-card p{color:var(--muted);margin:0 0 16px}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 22px}.tags span{font-size:13px;font-weight:800;color:#475467;background:#f2f4f7;border:1px solid var(--line);border-radius:999px;padding:5px 9px}.open{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;border-radius:16px;padding:11px 14px;background:#f8fafc;border:1px solid var(--line);font-weight:900}.open:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .guide{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.num{width:32px;height:32px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}.step h3{margin:0 0 6px}.step p{margin:0;color:var(--muted);font-size:14px}
-    .deploy{background:#111827;color:white;border-radius:30px;padding:28px;margin-top:18px;box-shadow:var(--shadow)}.deploy h3{margin:0 0 10px;font-size:24px}.deploy p{color:rgba(255,255,255,.75);margin:0 0 14px}.code{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:14px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:#f9fafb}
-    footer{text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:28px;margin-top:54px}
-    @media(max-width:900px){.hero,.grid,.guide{grid-template-columns:1fr}.topbar,.section-head{display:block}.nav{justify-content:flex-start;margin-top:14px}.hero-card{padding:28px}}
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .wrap{
+      max-width:1160px;
+      margin:auto;
+      padding:28px 22px 70px;
+    }
+
+    /* 顶部导航 */
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:34px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+    }
+
+    .mark{
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      background:#182033;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 26px rgba(24,32,51,.18);
+    }
+
+    .nav{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav a{
+      font-size:14px;
+      color:var(--muted);
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.72);
+    }
+
+    .nav a:hover{
+      color:var(--blue);
+      border-color:#bfdbfe;
+      background:#eff6ff;
+    }
+
+    /* Hero 区域 */
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
+      align-items:center;
+      margin:34px 0 28px;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:34px;
+      padding:42px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-card:after{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      right:-70px;
+      top:-80px;
+      background:rgba(37,99,235,.10);
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#eef2ff;
+      color:#3730a3;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .kicker:before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--indigo);
+    }
+
+    h1{
+      font-size:clamp(36px,6vw,68px);
+      line-height:1.04;
+      letter-spacing:-.045em;
+      margin:18px 0 16px;
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      max-width:760px;
+      margin:0;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      padding:12px 18px;
+      font-weight:900;
+      border:1px solid transparent;
+      transition:.2s ease;
+    }
+
+    .btn.primary{
+      background:var(--ink);
+      color:white;
+      box-shadow:0 14px 30px rgba(24,32,51,.22);
+    }
+
+    .btn.primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn.ghost{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--ink);
+    }
+
+    .btn.ghost:hover{
+      border-color:#bfdbfe;
+      color:var(--blue);
+    }
+
+    /* 右侧摘要 */
+
+    .summary{
+      display:grid;
+      gap:14px;
+    }
+
+    .mini{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 10px 28px rgba(24,32,51,.06);
+    }
+
+    .mini b{
+      display:block;
+      font-size:18px;
+      margin-bottom:4px;
+    }
+
+    .mini span{
+      color:var(--muted);
+    }
+
+    /* 公共标题 */
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
+      margin:52px 0 18px;
+    }
+
+    h2{
+      font-size:clamp(28px,4vw,42px);
+      line-height:1.15;
+      margin:0;
+      letter-spacing:-.03em;
+    }
+
+    .sub{
+      color:var(--muted);
+      margin:0;
+      max-width:560px;
+    }
+
+    /* 子网页卡片 */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .site-card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 14px 34px rgba(24,32,51,.07);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:330px;
+      transition:.2s ease;
+    }
+
+    .site-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 24px 54px rgba(24,32,51,.12);
+    }
+
+    .site-card:before{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:0;
+      height:7px;
+      background:var(--accent);
+    }
+
+    .badge{
+      width:46px;
+      height:46px;
+      border-radius:17px;
+      display:grid;
+      place-items:center;
+      background:color-mix(in srgb, var(--accent) 14%, white);
+      color:var(--accent);
+      font-weight:950;
+      margin-bottom:18px;
+    }
+
+    .site-card h3{
+      font-size:22px;
+      line-height:1.25;
+      margin:0 0 10px;
+    }
+
+    .site-card p{
+      color:var(--muted);
+      margin:0 0 16px;
+    }
+
+    .tags{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin:4px 0 22px;
+    }
+
+    .tags span{
+      font-size:13px;
+      font-weight:800;
+      color:#475467;
+      background:#f2f4f7;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:5px 9px;
+    }
+
+    .open{
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:16px;
+      padding:11px 14px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      font-weight:900;
+    }
+
+    .open:hover{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+    }
+
+    /* 学习路径 */
+
+    .guide{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+    }
+
+    .num{
+      width:32px;
+      height:32px;
+      border-radius:12px;
+      background:var(--ink);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    .step h3{
+      margin:0 0 6px;
+    }
+
+    .step p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* 部署区域 */
+
+    .deploy{
+      background:#111827;
+      color:white;
+      border-radius:30px;
+      padding:28px;
+      margin-top:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .deploy h3{
+      margin:0 0 10px;
+      font-size:24px;
+    }
+
+    .deploy p{
+      color:rgba(255,255,255,.75);
+      margin:0 0 14px;
+    }
+
+    .code{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:16px;
+      padding:14px;
+      overflow:auto;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      font-size:13px;
+      color:#f9fafb;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      border-top:1px solid var(--line);
+      padding-top:28px;
+      margin-top:54px;
+    }
+
+    /* 手机适配 */
+
+    @media(max-width:900px){
+
+      .hero,
+      .grid,
+      .guide{
+        grid-template-columns:1fr;
+      }
+
+      .topbar,
+      .section-head{
+        display:block;
+      }
+
+      .nav{
+        justify-content:flex-start;
+        margin-top:14px;
+      }
+
+      .hero-card{
+        padding:28px;
+      }
+    }
+
   </style>
 </head>
+
 <body>
+
   <div class="wrap">
+
+    <!-- 顶部导航 -->
+
     <header class="topbar">
-      <a class="brand" href="#top"><span class="mark">论文</span><span>学术论文资源中心</span></a>
+
+      <a class="brand" href="#top">
+        <span class="mark">论文</span>
+        <span>学术论文资源中心</span>
+      </a>
+
       <nav class="nav" aria-label="首页导航">
         <a href="#sites">三个子网页</a>
         <a href="#how">学习路径</a>
         <a href="#deploy">部署方式</a>
       </nav>
+
     </header>
 
+    <!-- 首页首屏 -->
+
     <section id="top" class="hero">
+
       <div class="hero-card">
-        <span class="kicker">Academic Paper Writing Hub</span>
-        <h1>把论文写作、学位论文规范和国标速查整合到一个入口</h1>
-        <p class="lead">这是三个静态网页的总首页。你可以把它放在 GitHub Pages 根目录，三个已有网页作为子页面存在，学生从这里进入不同学习模块。</p>
+
+        <span class="kicker">
+          Academic Paper Writing Hub
+        </span>
+
+        <h1>
+          把论文写作、学位论文规范和国标速查整合到一个入口
+        </h1>
+
+        <p class="lead">
+          这是三个静态网页的总首页。你可以把它放在 GitHub Pages 根目录，
+          三个已有网页作为子页面存在，学生从这里进入不同学习模块。
+        </p>
+
         <div class="actions">
-          <a class="btn primary" href="#sites">进入资源导航</a>
-          <a class="btn ghost" href="#deploy">查看部署说明</a>
+          <a class="btn primary" href="#sites">
+            进入资源导航
+          </a>
+
+          <a class="btn ghost" href="#deploy">
+            查看部署说明
+          </a>
         </div>
+
       </div>
+
+      <!-- 右侧摘要 -->
+
       <aside class="summary" aria-label="首页摘要">
-        <div class="mini"><b>写作入门</b><span>理解什么是学术论文，以及从选题到成文的流程。</span></div>
-        <div class="mini"><b>学位论文规则</b><span>快速查看 GB/T 7713.1—2006 学位论文结构与排版。</span></div>
-        <div class="mini"><b>学术论文规范</b><span>按 GB/T 7713.2—2022 检查题名、摘要、关键词、图表和参考文献。</span></div>
+
+        <div class="mini">
+          <b>写作入门</b>
+          <span>理解什么是学术论文，以及从选题到成文的流程。</span>
+        </div>
+
+        <div class="mini">
+          <b>学位论文规则</b>
+          <span>快速查看 GB/T 7713.1—2006 学位论文结构与排版。</span>
+        </div>
+
+        <div class="mini">
+          <b>学术论文规范</b>
+          <span>按 GB/T 7713.2—2022 检查题名、摘要、关键词、图表和参考文献。</span>
+        </div>
+
       </aside>
+
     </section>
+
+    <!-- 三个子网页 -->
 
     <section id="sites">
+
       <div class="section-head">
-        <div><h2>三个子网页</h2></div>
-        <p class="sub">保留原来的三个网页文件名，和本首页放在同一目录即可点击访问。</p>
+
+        <div>
+          <h2>三个子网页</h2>
+        </div>
+
+        <p class="sub">
+          保留原来的三个网页文件名，和本首页放在同一目录即可点击访问。
+        </p>
+
       </div>
+
       <div class="grid">
+
+        <!-- 第一个网页 -->
+
         <article class="site-card" style="--accent:#9b1231">
+
           <div class="badge">01</div>
+
           <h3>如何撰写学术论文</h3>
-          <p>适合第一次写论文的学生，重点讲清“论文是什么、怎么选题、怎么搭结构、怎么检查”。</p>
-          <div class="tags"><span>入门</span><span>选题</span><span>写作流程</span></div>
-          <a class="open" href="academic_paper_guide(1).html">打开子网页 →</a>
+
+          <p>
+            适合第一次写论文的学生，
+            重点讲清“论文是什么、怎么选题、怎么搭结构、怎么检查”。
+          </p>
+
+          <div class="tags">
+            <span>入门</span>
+            <span>选题</span>
+            <span>写作流程</span>
+          </div>
+
+          <!-- 已修改 -->
+          <a class="open" href="academic_paper_guide.html">
+            打开子网页 →
+          </a>
+
         </article>
+
+        <!-- 第二个网页 -->
 
         <article class="site-card" style="--accent:#4f46e5">
+
           <div class="badge">02</div>
+
           <h3>学位论文编写规则</h3>
-          <p>面向学位论文定稿前自查，覆盖前置部分、主体部分、参考文献、附录、页码和排版要求。</p>
-          <div class="tags"><span>GB/T 7713.1—2006</span><span>学位论文</span><span>格式清单</span></div>
-          <a class="open" href="GBT%207713.1%E2%80%942006thesis_rules_student.html">打开子网页 →</a>
+
+          <p>
+            面向学位论文定稿前自查，
+            覆盖前置部分、主体部分、参考文献、附录、页码和排版要求。
+          </p>
+
+          <div class="tags">
+            <span>GB/T 7713.1—2006</span>
+            <span>学位论文</span>
+            <span>格式清单</span>
+          </div>
+
+          <a class="open"
+             href="GBT%207713.1%E2%80%942006thesis_rules_student.html">
+            打开子网页 →
+          </a>
+
         </article>
+
+        <!-- 第三个网页 -->
 
         <article class="site-card" style="--accent:#2563eb">
+
           <div class="badge">03</div>
+
           <h3>学术论文写作规范速查</h3>
-          <p>根据 GB/T 7713.2—2022 整理，便于检查题名、摘要、关键词、正文、图表、单位和参考文献。</p>
-          <div class="tags"><span>GB/T 7713.2—2022</span><span>速查</span><span>提交前检查</span></div>
-          <a class="open" href="academic_paper_guide_gbt_7713_html.html">打开子网页 →</a>
+
+          <p>
+            根据 GB/T 7713.2—2022 整理，
+            便于检查题名、摘要、关键词、正文、图表、单位和参考文献。
+          </p>
+
+          <div class="tags">
+            <span>GB/T 7713.2—2022</span>
+            <span>速查</span>
+            <span>提交前检查</span>
+          </div>
+
+          <a class="open"
+             href="academic_paper_guide_gbt_7713_html.html">
+            打开子网页 →
+          </a>
+
         </article>
+
       </div>
+
     </section>
+
+    <!-- 学习路径 -->
 
     <section id="how">
+
       <div class="section-head">
-        <div><h2>推荐学习路径</h2></div>
-        <p class="sub">学生可以按“先理解写作，再核对规范，最后提交检查”的顺序使用。</p>
+
+        <div>
+          <h2>推荐学习路径</h2>
+        </div>
+
+        <p class="sub">
+          学生可以按“先理解写作，再核对规范，最后提交检查”的顺序使用。
+        </p>
+
       </div>
+
       <div class="guide">
-        <div class="step"><div class="num">1</div><h3>先看写作入门</h3><p>明确论文的研究问题、证据和观点。</p></div>
-        <div class="step"><div class="num">2</div><h3>再看学位规则</h3><p>确认封面、摘要、目录、正文、参考文献等结构。</p></div>
-        <div class="step"><div class="num">3</div><h3>速查国标细节</h3><p>核对题名、关键词、图表编号、单位和引用。</p></div>
-        <div class="step"><div class="num">4</div><h3>提交前总检查</h3><p>用各网页的清单逐项打勾，减少格式扣分。</p></div>
+
+        <div class="step">
+          <div class="num">1</div>
+          <h3>先看写作入门</h3>
+          <p>明确论文的研究问题、证据和观点。</p>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <h3>再看学位规则</h3>
+          <p>确认封面、摘要、目录、正文、参考文献等结构。</p>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <h3>速查国标细节</h3>
+          <p>核对题名、关键词、图表编号、单位和引用。</p>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <h3>提交前总检查</h3>
+          <p>用各网页的清单逐项打勾，减少格式扣分。</p>
+        </div>
+
       </div>
+
     </section>
+
+    <!-- GitHub 部署 -->
 
     <section id="deploy">
+
       <div class="section-head">
-        <div><h2>GitHub Pages 静态部署</h2></div>
-        <p class="sub">把下面四个 HTML 文件放到同一个仓库根目录即可。</p>
+
+        <div>
+          <h2>GitHub Pages 静态部署</h2>
+        </div>
+
+        <p class="sub">
+          把下面四个 HTML 文件放到同一个仓库根目录即可。
+        </p>
+
       </div>
+
       <div class="deploy">
+
         <h3>推荐目录结构</h3>
-        <p>GitHub Pages 会默认把 <strong>index.html</strong> 作为首页。</p>
-        <div class="code">your-repo/
+
+        <p>
+          GitHub Pages 会默认把
+          <strong>index.html</strong>
+          作为首页。
+        </p>
+
+        <div class="code">
+your-repo/
 ├─ index.html
-├─ academic_paper_guide(1).html
+├─ academic_paper_guide.html
 ├─ GBT 7713.1—2006thesis_rules_student.html
-└─ academic_paper_guide_gbt_7713_html.html</div>
-        <p style="margin-top:14px">在仓库 Settings → Pages 中选择部署分支，例如 <strong>main</strong> / <strong>root</strong>，保存后访问 GitHub Pages 给出的链接。</p>
+└─ academic_paper_guide_gbt_7713_html.html
+        </div>
+
+        <p style="margin-top:14px">
+          在仓库 Settings → Pages 中选择部署分支，
+          例如 <strong>main</strong> / <strong>root</strong>，
+          保存后访问 GitHub Pages 给出的链接。
+        </p>
+
       </div>
+
     </section>
 
-    <footer>© 学术论文写作与规范资源中心 · 静态网页首页</footer>
+    <footer>
+      © 学术论文写作与规范资源中心 · 静态网页首页
+    </footer>
+
   </div>
+
 </body>
 </html>
