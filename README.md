@@ -1,2 +1,1 @@
-# Collection-of-Writing-Tips-for-Academic-Dissertations
-Collection of Writing Tips for Academic Dissertations
+论文攥写指南
